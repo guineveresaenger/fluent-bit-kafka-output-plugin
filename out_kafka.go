@@ -116,7 +116,7 @@ func prepare_data(record interface{}) interface{} {
 
 func encode_as_json(m interface {}) ([]byte, error) {
   slice := reflect.ValueOf(m)
-  timestamp := slice.Index(0).Interface().(uint64)
+  timestamp := slice.Index(0).Interface().(codec.RawExt)
   record := slice.Index(1).Interface()
 
   type Log struct {
