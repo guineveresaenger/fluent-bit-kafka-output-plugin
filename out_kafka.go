@@ -120,7 +120,7 @@ func encode_as_json(m interface {}) ([]byte, error) {
   record := slice.Index(1).Interface()
 
   type Log struct {
-    Time uint64
+    Time codec.RawExt
     Record interface{}
   }
 
