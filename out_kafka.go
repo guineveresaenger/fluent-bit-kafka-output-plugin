@@ -4,6 +4,7 @@ import (
   "github.com/fluent/fluent-bit-go/output"
   "github.com/ugorji/go/codec"
   "github.com/Shopify/sarama"
+  "github.com/davecgh/go-spew/spew"
   "encoding/json"
   "reflect"
   "unsafe"
@@ -116,6 +117,7 @@ func prepare_data(record interface{}) interface{} {
 
 func encode_as_json(m interface {}) ([]byte, error) {
   slice := reflect.ValueOf(m)
+  spew.Dump(slice)
   timestamp := slice.Index(0).Interface().(uint64)
   record := slice.Index(1).Interface()
 
