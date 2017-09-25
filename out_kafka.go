@@ -119,6 +119,8 @@ func prepare_data(record interface{}) interface{} {
 func encode_as_json(m interface{}) ([]byte, error) {
 	slice := reflect.ValueOf(m)
 	spew.Dump(slice)
+	fmt.Println("HI HELLO I SEE OUTPUT")
+	spew.Dump(slice.Index(0))
 	timestamp := slice.Index(0).Interface().(uint64)
 	record := slice.Index(1).Interface()
 
