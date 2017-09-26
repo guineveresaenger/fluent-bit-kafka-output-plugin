@@ -122,7 +122,7 @@ func encode_as_json(m interface{}) ([]byte, error) {
 
 	fmt.Println("HI HELLO I SEE OUTPUT")
 
-	spew.Dump(slice.Index(0).Interface())
+	spew.Dump(slice.Index(0).Interface().map("time"))
 	timestamp := slice.Index(0).Interface().(uint64)
 	record := slice.Index(1).Interface()
 
