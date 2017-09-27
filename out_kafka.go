@@ -14,7 +14,7 @@ import (
 	"github.com/ugorji/go/codec"
 )
 
-var brokerList []string = []string{"kafka-0.kafka.default.svc.cluster.local:9092"}
+var brokerList []string = []string{"localhost:9092"}
 var producer sarama.SyncProducer
 
 //export FLBPluginRegister
@@ -122,7 +122,7 @@ func encode_as_json(m interface{}) ([]byte, error) {
 
 	fmt.Println("HI HELLO I SEE OUTPUT")
 
-	spew.Dump(slice.Index(0).Interface().Interface())
+	spew.Dump(slice.Index(0).Interface())
 	timestamp := slice.Index(0).Interface().(uint64)
 	record := slice.Index(1).Interface()
 
